@@ -1650,9 +1650,9 @@ textarea:focus {
 }
 .wishlist-text > p,
 .login-text-content > p {
-    color: #2f333a;
+    color: #fff;
     line-height: 19px;
-    margin: -2px 0 0;
+    margin: 8px 0;
 }
 .login-text-content > p span,
 .wishlist-text > p span {
@@ -1662,6 +1662,7 @@ textarea:focus {
     display: inline-block;
     float: left;
     line-height: 1;
+    margin-top: 8px;
     position: relative;
 }
 .header-icon-style i {
@@ -1678,13 +1679,10 @@ textarea:focus {
     color: #fff;
     display: block;
     font-size: 14px;
-    line-height: 1;
+    margin: 8px 0;
 }
-.cart-text > span.cart-digit-bold {
+.cart-text > span.cart-digit-bold > span.digit {
     color: #e02c2b;
-}
-.cart-text > span.digit {
-    margin-bottom: 6px;
 }
 .header-cart > a .header-icon-style span {
     background-color: #e02c2b;
