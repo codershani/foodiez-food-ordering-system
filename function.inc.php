@@ -199,10 +199,12 @@ function getUserDetailsByid($uid=''){
 	}
 	
 	$row=mysqli_fetch_assoc(mysqli_query($con,"select * from user where id='$uid'"));
-	$data['name']=$row['name'];
-	$data['email']=$row['email'];
-	$data['mobile']=$row['mobile'];
-	$data['referral_code']=$row['referral_code'];
+  if($row) {
+    $data['name']=$row['name'];
+    $data['email']=$row['email'];
+    $data['mobile'] = $row['mobile'];
+    $data['referral_code']=$row['referral_code'];
+  }
 	return $data;
 }
 

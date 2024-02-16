@@ -22,7 +22,8 @@ $res=mysqli_query($con,$sql);
 							<th width="10%">Payment Type</th>
 							<th width="10%">Payment Status</th>
 							<th width="10%">Order Status</th>
-                            <th width="15%">Added On</th>
+                            <th width="10%">Added On</th>
+                            <th width="10%">Action</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -59,11 +60,12 @@ $res=mysqli_query($con,$sql);
 							</td>
 							<td><?php echo $row['order_status_str']?></td>
 							<td>
-							<?php 
-							$dateStr=strtotime($row['added_on']);
+							<?php
+							$dateStr = strtotime($row['added_on']);
 							echo date('d-m-Y h:s',$dateStr);
 							?>
 							</td>
+							<td><a href="update_order.php?id=<?php echo $row['id']?>" class="btn btn-primary">Manage</a></td>
 							
                         </tr>
                         <?php 

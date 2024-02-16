@@ -60,6 +60,7 @@ if(isset($_SESSION['FOOD_USER_ID'])){
         <link rel="stylesheet" href="<?php echo FRONT_SITE_PATH?>assets/css/meanmenu.min.css">
         <link rel="stylesheet" href="<?php echo FRONT_SITE_PATH?>assets/css/style.css">
         <link rel="stylesheet" href="<?php echo FRONT_SITE_PATH?>assets/css/responsive.css">
+        <link rel="icon" type="image/x-icon" href="<?php echo FRONT_SITE_PATH?>assets/img/logo/favicon.png">
         <script src="<?php echo FRONT_SITE_PATH?>assets/js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
@@ -68,83 +69,83 @@ if(isset($_SESSION['FOOD_USER_ID'])){
             <div class="header-top black-bg">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-6 col-md-4  col-sm-2">
-                            <div class="col-lg-9 col-md-8 col-12 col-sm-8">
-                            <div class="header-middle-right f-left">
-                                <div class="header-login">
-                                    <?php
-									if(!isset($_SESSION['FOOD_USER_NAME'])){
-										?>
-									<a href="<?php echo FRONT_SITE_PATH?>login_register">
-                                        <div class="header-icon-style">
-                                            <i class="icon-user icons header_icon"></i>
-                                        </div>
-                                        <div class="login-text-content header_icon">
-											
-												<p>Register or <span>Sign in</span></p>
-												
-                                        </div>
-                                    </a>
-									<?php
-											}
-											?>
-                                </div>
-                                <div class="header-wishlist">
-                                   &nbsp;
-                                </div>
-                                <div class="header-cart">
-                                    <a href="#">
-                                        <div class="header-icon-style">
-                                            <i class="icon-handbag icons"></i>
-                                            <span class="count-style" id="totalCartDish"><?php echo $totalCartDish?></span>
-                                        </div>
-                                        <div class="cart-text">
-                                            <span class="cart-digit-bold" id="totalPrice">
-                                                <?php 
-											if($totalPrice!=0){
-                                                echo $totalPrice.' Rs';
-											} else {
-                                                echo "<span class='digit'>My Cart</span>";
-                                            }
-											?></span>
-                                        </div>
-                                    </a>
-									<?php if($totalPrice!=0){?>
-									<div class="shopping-cart-content">
-                                        <ul id="cart_ul">
-											<?php foreach($cartArr as $key=>$list){ ?>
-												<li class="single-shopping-cart" id="attr_<?php echo $key?>">
-													<div class="shopping-cart-img">
-														<a href="javascript:void(0)"><img alt="" src="<?php echo SITE_DISH_IMAGE.$list['image']?>"></a>
-													</div>
-													<div class="shopping-cart-title">
-														<h4><a href="javascript:void(0)">
-														<?php echo $list['dish']?>
-														</a></h4>
-														<h6>Qty: <?php echo $list['qty']?></h6>
-														<span><?php echo 
-														$list['qty']*$list['price'];?> Rs</span>
-													</div>
-													<div class="shopping-cart-delete">
-														<a href="javascript:void(0)" onclick="delete_cart('<?php echo $key?>')"><i class="ion ion-close"></i></a>
-													</div>
-												</li>
-											<?php } ?>
-                                        </ul>
-                                        <div class="shopping-cart-total">
-                                            <h4>Total : <span class="shop-total" id="shopTotal">
-											<?php echo $totalPrice?> Rs
-											</span></h4>
-                                        </div>
-                                        <div class="shopping-cart-btn">
-                                            <a href="<?php echo FRONT_SITE_PATH?>cart">view cart</a>
-                                            <a href="<?php echo FRONT_SITE_PATH?>checkout">checkout</a>
-                                        </div>
+                        <div class="col-lg-6 col-md-4 col-sm-2">
+                            <div class="col-lg-9 col-md-8 col-12">
+                                <div class="header-middle-right d-flex">
+                                    <div class="header-login">
+                                        <?php
+                                        if(!isset($_SESSION['FOOD_USER_NAME'])){
+                                            ?>
+                                        <a href="<?php echo FRONT_SITE_PATH?>login_register">
+                                            <div class="header-icon-style">
+                                                <i class="icon-user icons header_icon"></i>
+                                            </div>
+                                            <div class="login-text-content header_icon">
+                                                
+                                                    <p>Register or <span>Sign in</span></p>
+                                                    
+                                            </div>
+                                        </a>
+                                        <?php
+                                                }
+                                                ?>
                                     </div>
-									<?php } ?>
+                                    <div class="header-wishlist">
+                                    &nbsp;
+                                    </div>
+                                    <div class="header-cart">
+                                        <a href="#">
+                                            <div class="header-icon-style">
+                                                <i class="icon-handbag icons"></i>
+                                                <span class="count-style" id="totalCartDish"><?php echo $totalCartDish?></span>
+                                            </div>
+                                            <div class="cart-text">
+                                                <span class="cart-digit-bold" id="totalPrice">
+                                                    <?php 
+                                                if($totalPrice!=0){
+                                                    echo $totalPrice.' Rs';
+                                                } else {
+                                                    echo "<span class='digit'>My Cart</span>";
+                                                }
+                                                ?></span>
+                                            </div>
+                                        </a>
+                                        <?php if($totalPrice!=0){?>
+                                        <div class="shopping-cart-content">
+                                            <ul id="cart_ul">
+                                                <?php foreach($cartArr as $key=>$list){ ?>
+                                                    <li class="single-shopping-cart" id="attr_<?php echo $key?>">
+                                                        <div class="shopping-cart-img">
+                                                            <a href="javascript:void(0)"><img alt="" src="<?php echo SITE_DISH_IMAGE.$list['image']?>"></a>
+                                                        </div>
+                                                        <div class="shopping-cart-title">
+                                                            <h4><a href="javascript:void(0)">
+                                                            <?php echo $list['dish']?>
+                                                            </a></h4>
+                                                            <h6>Qty: <?php echo $list['qty']?></h6>
+                                                            <span><?php echo 
+                                                            $list['qty']*$list['price'];?> Rs</span>
+                                                        </div>
+                                                        <div class="shopping-cart-delete">
+                                                            <a href="javascript:void(0)" onclick="delete_cart('<?php echo $key?>')"><i class="ion ion-close"></i></a>
+                                                        </div>
+                                                    </li>
+                                                <?php } ?>
+                                            </ul>
+                                            <div class="shopping-cart-total">
+                                                <h4>Total : <span class="shop-total" id="shopTotal">
+                                                <?php echo $totalPrice?> Rs
+                                                </span></h4>
+                                            </div>
+                                            <div class="shopping-cart-btn">
+                                                <a href="<?php echo FRONT_SITE_PATH?>cart">view cart</a>
+                                                <a href="<?php echo FRONT_SITE_PATH?>checkout">checkout</a>
+                                            </div>
+                                        </div>
+                                        <?php } ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
 						<div class="col-lg-2 col-md-2 col-sm-4 col-4">
 							<?php
@@ -178,26 +179,21 @@ if(isset($_SESSION['FOOD_USER_ID'])){
                     </div>
                 </div>
             </div>
-            <div class="header-middle">
+            <div class="header-bottom transparent-bar white-bg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-3 col-md-4 col-12 col-sm-4">
                             <div class="logo">
                                 <a href="<?php echo FRONT_SITE_PATH?>">
-                                    <img alt="" src="<?php echo FRONT_SITE_PATH?>assets/img/logo/logo.png">
+                                    <img alt="" src="<?php echo FRONT_SITE_PATH?>assets/img/logo/food-ordering-logo.png" width="120px" class="my-3">
                                 </a>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="header-bottom transparent-bar black-bg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="main-menu">
+                        <div class="col-lg-9 col-md-8 col-6">
+                            <div class="main-menu d-md-flex d-none">
                                 <nav>
                                     <ul>
+                                        <li><a href="<?php echo FRONT_SITE_PATH?>">Home</a></li>
                                         <li><a href="<?php echo FRONT_SITE_PATH?>shop">Shop</a></li>
                                         <li><a href="<?php echo FRONT_SITE_PATH?>about-us">about</a></li>
                                         <li><a href="<?php echo FRONT_SITE_PATH?>contact-us">contact us</a></li>
@@ -216,7 +212,8 @@ if(isset($_SESSION['FOOD_USER_ID'])){
 							<div class="mobile-menu">
 								<nav id="mobile-menu-active">
 									<ul class="menu-overflow" id="nav">
-										<li><a href="<?php echo FRONT_SITE_PATH?>shop">Home</a></li>
+                                        <li><a href="<?php echo FRONT_SITE_PATH?>">Home</a></li>
+										<li><a href="<?php echo FRONT_SITE_PATH?>shop">Shop</a></li>
 										<li><a href="<?php echo FRONT_SITE_PATH?>about-us">About Us</a></li>
 										<li><a href="<?php echo FRONT_SITE_PATH?>contact-us">Contact Us</a></li>
 									</ul>

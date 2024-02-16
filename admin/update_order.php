@@ -44,13 +44,13 @@ if(isset($_GET['id']) && $_GET['id']>0){
 		
 		
 		
-		redirect(FRONT_SITE_PATH.'admin/order_detail.php?id='.$id);
+		redirect(FRONT_SITE_PATH.'admin/update_order.php?id='.$id);
 	}
 	
 	if(isset($_GET['delivery_boy'])){
 		$delivery_boy=get_safe_value($_GET['delivery_boy']);
 		mysqli_query($con,"update order_master set delivery_boy_id='$delivery_boy' where id='$id'");
-		redirect(FRONT_SITE_PATH.'admin/order_detail.php?id='.$id);
+		redirect(FRONT_SITE_PATH.'admin/update_order.php?id='.$id);
 	}
 	
 	$sql="select order_master.*,order_status.order_status as order_status_str from order_master,order_status where order_master.order_status=order_status.id and order_master.id='$id' order by order_master.id desc";
@@ -149,9 +149,9 @@ if(isset($_GET['id']) && $_GET['id']>0){
                       <a href="../download_invoice.php?id=<?php echo $id?>" class="btn btn-primary float-right mt-4 ml-2"><i class="mdi mdi-printer mr-1"></i>PDF</a>
                     </div>
 					<?php
-					$orderStatusRes=mysqli_query($con,"select * from order_status order by order_status");
+					$orderStatusRes=mysqli_query($con,"SELECT * from order_status");
 					
-					$orderDeliveryBoyRes=mysqli_query($con,"select * from delivery_boy where status=1 order by name");
+					$orderDeliveryBoyRes=mysqli_query($con,"SELECT * from delivery_boy where status=1 order by name");
 					
 					?>
 					<div>
@@ -189,7 +189,7 @@ function updateOrderStatus(){
 	var order_status=jQuery('#order_status').val();
 	if(order_status!=''){
 		var oid="<?php echo $id?>";
-		window.location.href='<?php echo FRONT_SITE_PATH?>admin/order_detail.php?id='+oid+'&order_status='+order_status;
+		window.location.href='<?php echo FRONT_SITE_PATH?>admin/update_order.php?id='+oid+'&order_status='+order_status;
 	}
 }
 
@@ -197,7 +197,7 @@ function updateDeliveryBoy(){
 	var delivery_boy=jQuery('#delivery_boy').val();
 	if(delivery_boy!=''){
 		var oid="<?php echo $id?>";
-		window.location.href='<?php echo FRONT_SITE_PATH?>admin/order_detail.php?id='+oid+'&delivery_boy='+delivery_boy;
+		window.location.href='<?php echo FRONT_SITE_PATH?>admin/update_order.php?id='+oid+'&delivery_boy='+delivery_boy;
 	}
 }
 

@@ -47,6 +47,7 @@ if($cur_path=='' || $cur_path=='index.php'){
   <link rel="stylesheet" href="assets/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="assets/css/dataTables.bootstrap4.css">
+  <link rel="icon" type="image/x-icon" href="<?php echo FRONT_SITE_PATH?>assets/img/logo/favicon.png">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
@@ -68,8 +69,8 @@ if($cur_path=='' || $cur_path=='index.php'){
           
         </ul>
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="index.php"><img src="assets/images/logo.png" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="index.php"><img src="assets/images/logo.png" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="index.php"><img src="assets/images/food-ordering-logo.png" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="index.php"><img src="assets/images/food-ordering-logo.png" alt="logo"/></a>
         </div>
         <ul class="navbar-nav navbar-nav-right">
           
